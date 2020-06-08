@@ -33,5 +33,9 @@ color 90
     :: To finish, we launch end
     goto end
 
+:greater
+    echo The mystery number is higher
+    goto start
+
 
 pause > nul
