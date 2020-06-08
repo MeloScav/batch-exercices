@@ -23,5 +23,15 @@ color 90
     :: If the number is less than 1, it starts again
     if %randomNbr% LSS 1 goto random_number
 
+:: The user choose a number
+:start
+    set /p userNbr=Choose a number : 
+    :: If the chosen number is < than the random number, we launch greater
+    if %userNbr% LSS %randomNbr% goto greater
+    :: If the chosen number is > than the random number, we launch lower
+    if %userNbr% GTR %randomNbr% goto lower
+    :: To finish, we launch end
+    goto end
+
 
 pause > nul
