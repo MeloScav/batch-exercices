@@ -37,5 +37,10 @@ color 90
     echo The mystery number is higher
     goto start
 
+:lower
+    echo The mystery number is lower
+    goto start
+
+
 
 pause > nul
