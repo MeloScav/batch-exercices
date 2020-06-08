@@ -41,6 +41,8 @@ color 90
     echo The mystery number is lower
     goto start
 
+:end
+    echo Good game !
 
 
 pause > nul
