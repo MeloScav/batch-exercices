@@ -15,5 +15,13 @@ color 90
 
 :: CODE
 
+:: The computer choose a random number
+:random_number
+    set randomNbr=%RANDOM%
+    :: If the number is greater than 1000, it starts again
+    if %randomNbr% GTR 1000 goto random_number
+    :: If the number is less than 1, it starts again
+    if %randomNbr% LSS 1 goto random_number
+
 
 pause > nul
