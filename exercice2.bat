@@ -37,7 +37,9 @@ set nbrOfTries=0
 
 :: The user choose a number
 :start
-    set /p userNbr=Choose a number : 
+    set /p userNbr = Choose a number : 
+    :: Increasement number of trials by 1
+    set /a nbrOfTries = %nbrOfTries% + 1 
     :: If the chosen number is < than the random number, we launch greater
     if %userNbr% LSS %randomNbr% goto greater
     :: If the chosen number is > than the random number, we launch lower
