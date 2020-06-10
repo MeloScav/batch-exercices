@@ -14,6 +14,11 @@ color 90
 
 :: CODE
 
+:: VARIABLES
+set minNbr = 1
+set maxNbr = 10
+set nbrOfTries = 0
+
 :: The computer choose a random number
 :random_number
     set randomNbr=%RANDOM%
