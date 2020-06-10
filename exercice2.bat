@@ -37,7 +37,7 @@ set nbrOfTries=0
 
 :: The user choose a number
 :start
-    set /p userNbr = Choose a number : 
+    set /p userNbr =Choose a number : 
     :: Increasement number of trials by 1
     set /a nbrOfTries = %nbrOfTries% + 1 
     :: If the chosen number is < than the random number, we launch greater
@@ -56,7 +56,15 @@ set nbrOfTries=0
     goto start
 
 :end
-    echo Good game !
+    echo Good game ! You succeeded in %nbrOfTries% tries 
+    :: If the file doesn't exist, we create it
+    If not exist scores.txt ( echo Difficulty level : %level% )
+    :: Add in the file end
+    echo Number of tries : %nbrOfTries% >> scores.txt
+
+    set /p finalDecision = What do you want to do ? 1. Restart 2. Exit
+    if %finalDecision%==1 ( goto difficulty ) else( exit )
+
 
 
 pause > nul
