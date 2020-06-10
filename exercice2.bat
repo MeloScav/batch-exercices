@@ -15,9 +15,9 @@ color 90
 :: CODE
 
 :: VARIABLES
-set minNbr = 1
-set maxNbr = 10
-set nbrOfTries = 0
+set minNbr=1
+set maxNbr=10
+set nbrOfTries=0
 
 :: The user chooses a difficulty level
 :difficulty
@@ -37,10 +37,10 @@ set nbrOfTries = 0
 :: The computer choose a random number
 :random_number
     set randomNbr=%RANDOM%
-    :: If the number is greater than 1000, it starts again
-    if %randomNbr% GTR 1000 goto random_number
-    :: If the number is less than 1, it starts again
-    if %randomNbr% LSS 1 goto random_number
+    :: If the number is greater than maxNbr, it starts again
+    if %randomNbr% GTR %maxNbr% goto random_number
+    :: If the number is less than minNbr, it starts again
+    if %randomNbr% LSS %minNbr% goto random_number
 
 :: The user choose a number
 :start
