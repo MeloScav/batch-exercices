@@ -7,7 +7,7 @@ color 90
 
 :: CODE
 
-:: The computer choose a random number
+:: Choose a random number
 :random_number
     set randomNbr=%RANDOM%
     :: If the number is greater than 1000, it starts again
@@ -15,7 +15,7 @@ color 90
     :: If the number is less than 1, it starts again
     if %randomNbr% LSS 1 goto random_number
 
-:: The user choose a number
+:: The user chooses a number
 :start
     set /p userNbr=Choose a number : 
     :: If the chosen number is < than the random number, we launch greater
@@ -26,11 +26,11 @@ color 90
     goto end
 
 :greater
-    echo The mystery number is higher
+    echo The mystery number is greater than %userNbr%
     goto start
 
 :lower
-    echo The mystery number is lower
+    echo The mystery number is less than %userNbr%
     goto start
 
 :end
